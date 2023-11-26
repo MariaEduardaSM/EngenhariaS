@@ -21,11 +21,11 @@ do curso de T.I da instituição CEFET<p/>
 </h4>
 
 ## 🔨 Primeiras observações:
-- ` 1`: O projeto está sendo feito na linguagem Java.
-- ` 2`:  versão JDk:11.0.20.1 2023-08-24.
-- `3`:  A arquitetura foi organizada de maneira intuitiva em que classes semelhantes se encontra no mesmo pacote para que assim fique mais organizado e mais fácil de realizar possíveis mudanças durante o andamento do projeto.
-- `4`: O sistema ainda não está completo e se encontra sem conexão com o banco de dados e sem interface gráfica isso será adcionado mais tarde.
-- `5`: Foi usado os pacotes padrão do Java
+- : O projeto está sendo feito na linguagem Java.
+- :  versão JDk:11.0.20.1 2023-08-24.
+- :  A arquitetura foi organizada de maneira intuitiva em que classes semelhantes se encontra no mesmo pacote para que assim fique mais organizado e mais fácil de realizar possíveis mudanças durante o         andamento do projeto.
+- : O sistema ainda não está completo e se encontra sem conexão com o banco de dados e sem interface gráfica isso será adcionado mais tarde.
+- : Foi usado os pacotes padrão do Java
 
 <br>
 
@@ -99,14 +99,17 @@ A Classe `Main ` usa a classe Scanner para receber entrada do usuário e a class
 
 **OBS: O sistema se encontra incompleto**
 
+## 🔨 O que mudou na nova versão?:
+- :Foi adcionado o Método para que o Cliente escolha Item.
+- :E um método chamado fecharPedido a fim de mostrar tudo que possui no carrinho final.
+- :Estabelecimento agora recebe um ArrayList de item,retornando uma lista de itens para que o usuário consiga escolher.
+- :Também em estabelecimendo foi implementado o Método CadastrarItem.
 
-O que mudou agora na nova versão?
-foi adcionado o Método para que o Cliente escolha Item;
-e um método chamado fecharPedido a fim de mostrar tudo que possui no carrinho final
-Estabelecimento agora recebe um ArrayList de item,retornando uma lista de itens para que o usuário consiga esscolher
-também em estabelecimendo foi implementado o Método CadastrarItem
 
 
+
+ <img src="https://github.com/MariaEduardaSM/EngenhariaS/assets/112040400/ac9503b8-57e1-4f2b-abfd-43ff85ff9b89" alt="Interface" style="width:260px; border-radius:100%;">
+</p>
 
 
 
