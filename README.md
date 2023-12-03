@@ -128,7 +128,7 @@ aqui tá algumas opções de IDE! [Eclipse](https://www.eclipse.org/downloads/) 
 Ambos instalados 👍
 <br/>
 ```bash
-você irá copiar o link do nosso repositório ,abrir o terminal e digitar:
+você irá copiar o link do meu repositório ,abrir o terminal e digitar:
 $ git clone o link do meu repósitorio
 após clonado é só abrir com a IDE e executar 
 e prontinho!🎉
