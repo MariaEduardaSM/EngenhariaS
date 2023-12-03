@@ -52,7 +52,7 @@ O projeto que imita um sistema de delivery muito famoso que é o Ifood, tem como
 Além dos métodos adcionais que são eles;<br>
 
 -`alterarSenha(senha senha)` recebe dois parâmetros: uma senha antiga e uma nova senha. Se a senha antiga for igual à senha armazenada na variável de instância privada, a nova senha será armazenada na variável de instância privada e o método retornará verdadeiro. Caso contrário, o método retornará falso.<br>
-- `login()`recebe dois parâmetros: um email e uma senha. Se o email e a senha fornecidos forem iguais aos armazenados nas variáveis de instância privadas, o método retornará verdadeiro. Caso contrário, o método retornará falso.<br>
+- `login(email senha)`recebe dois parâmetros: um email e uma senha. Se o email e a senha fornecidos forem iguais aos armazenados nas variáveis de instância privadas, o método retornará verdadeiro. Caso contrário, o método retornará falso.<br>
 - `Estabelecimento(estabelecimento estabelecimento) `retorna o valor da variável de instância privada booleana estabelecimento.<br>
 
   A classe `Estabelecimento` é uma subclasse da classe Usuario e tem duas variáveis de instância privadas: cnpj e cardapio.
