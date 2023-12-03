@@ -48,27 +48,15 @@ O projeto que imita um sistema de delivery muito famoso que é o Ifood, tem como
  `Usuario`: Possue seis variáveis de instância privadas: **nome**, **email**, **senha**, **endereco**, **telefone** e **estabelecimento**<br>
  Possue seis métodos públicos:<br>
 
-O método `getNome()` retorna o valor da variável de instância privada nome.<br>
-O método `setNome()` atribui um novo valor à variável de instância privada nome.<br>
-O método `getEmail()` retorna o valor da variável de instância privada email.<br>
-O método `setEmail()` atribui um novo valor à variável de instância privada email.<br>
-O método `getSenha()` retorna o valor da variável de instância privada senha.<br>
-O método `setSenha()`atribui um novo valor à variável de instância privada senha.<br>
+
 Além dos métodos adcionais que são eles;<br>
 
--`alterarSenha()` recebe dois parâmetros: uma senha antiga e uma nova senha. Se a senha antiga for igual à senha armazenada na variável de instância privada, a nova senha será armazenada na variável de instância privada e o método retornará verdadeiro. Caso contrário, o método retornará falso.<br>
+-`alterarSenha(senha senha)` recebe dois parâmetros: uma senha antiga e uma nova senha. Se a senha antiga for igual à senha armazenada na variável de instância privada, a nova senha será armazenada na variável de instância privada e o método retornará verdadeiro. Caso contrário, o método retornará falso.<br>
 - `login()`recebe dois parâmetros: um email e uma senha. Se o email e a senha fornecidos forem iguais aos armazenados nas variáveis de instância privadas, o método retornará verdadeiro. Caso contrário, o método retornará falso.<br>
-- `Estabelecimento() `retorna o valor da variável de instância privada booleana estabelecimento.<br>
+- `Estabelecimento(estabelecimento estabelecimento) `retorna o valor da variável de instância privada booleana estabelecimento.<br>
 
   A classe `Estabelecimento` é uma subclasse da classe Usuario e tem duas variáveis de instância privadas: cnpj e cardapio.
 O construtor da classe recebe seis parâmetros: nome, email, cnpj, senha, endereco e telefone. Se o comprimento do parâmetro cnpj não for igual a 14, uma mensagem de erro será exibida. Caso contrário, o valor do parâmetro cnpj será armazenado na variável de instância privada correspondente. A variável de instância privada cardapio é inicializada como uma nova instância de um objeto ArrayList.
-
-
-A classe tem três métodos públicos:
-
-O método público `getCardapio()` retorna o valor da variável de instância privada cardapio.
-O método público `setCardapio() `atribui um novo valor à variável de instância privada cardapio.
-O método público `adicionarItem()` recebe um parâmetro do tipo Item e adiciona esse item à lista armazenada na variável de instância privada cardapio.<br>
 
 
 A classe`Cliente` é uma subclasse da classe Usuario e tem um construtor que recebe cinco parâmetros: nome, email, senha, endereco e telefone. O construtor chama o construtor da superclasse Usuario com esses parâmetros.
@@ -81,17 +69,17 @@ O construtor da classe inicializa a lista de usuários e o objeto Scanner.
 
 A classe tem dois métodos públicos:
 
-O método público `cadastrarUsuario()`solicita ao usuário que digite os dados do usuário que deseja cadastrar, incluindo nome, email, senha, endereço e telefone. Em seguida, cria um novo objeto do tipo Usuario com esses dados e adiciona o objeto à lista de usuários.
-O método público `getUsuarios()`retorna a lista de usuários.
+O método público `cadastrarUsuario(usuario usuario)`solicita ao usuário que digite os dados do usuário que deseja cadastrar, incluindo nome, email, senha, endereço e telefone. Em seguida, cria um novo objeto do tipo Usuario com esses dados e adiciona o objeto à lista de usuários.
+
 
 
 A classe `Carrinho` tem uma variável de instância privada chamada item, que é uma lista de objetos do tipo Item. O construtor da classe inicializa a lista de itens.
 
 A classe tem três métodos públicos:
 
-O método público `adicionarItem()` recebe um parâmetro do tipo Item e adiciona esse item à lista armazenada na variável de instância privada item.
-O método público `removerItem()` recebe um parâmetro do tipo Item e remove esse item da lista armazenada na variável de instância privada item.
-O método público `getItens()`retorna a lista de itens armazenados na variável de instância privada item.
+O método público `adicionarItem(item item)` recebe um parâmetro do tipo Item e adiciona esse item à lista armazenada na variável de instância privada item.
+O método público `removerItem(item item)` recebe um parâmetro do tipo Item e remove esse item da lista armazenada na variável de instância privada item.
+
 
 
 A Classe `Main ` usa a classe Scanner para receber entrada do usuário e a classe Cliente para armazenar informações do cliente. O programa tem três opções: login, cadastro e sair. Se o usuário escolher a opção de login, ele será solicitado a inserir seu email e senha. Se as credenciais estiverem corretas, o usuário será levado a um menu com mais opções, como buscar estabelecimentos, ver o carrinho e ver o pedido. Caso contrário, o usuário receberá uma mensagem de erro. Se o usuário escolher a opção de cadastro, ele será levado a um formulário para inserir suas informações pessoais. Se o usuário escolher a opção de sair, o programa será encerrado.Assim criando um Menu
