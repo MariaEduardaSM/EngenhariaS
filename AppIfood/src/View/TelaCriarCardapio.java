@@ -70,6 +70,23 @@ public class TelaCriarCardapio extends JFrame {
         btnAdicionar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 adicionarAoCardapio();
+                
+                
+                
+                JButton btnAdicionarMaisItens = new JButton("Adicionar Mais Itens");
+                btnAdicionarMaisItens.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Limpar os campos para adicionar mais itens
+                        limparCampos();
+                    }
+
+					private void limparCampos() {
+						// TODO Auto-generated method stub
+						
+					}
+                });
+                btnAdicionarMaisItens.setBounds(255, 107, 180, 25);
+                contentPane.add(btnAdicionarMaisItens);
             }
         });
         btnAdicionar.setBounds(85, 107, 215, 25);
@@ -114,5 +131,9 @@ public class TelaCriarCardapio extends JFrame {
 
     private void showMessage(String message) {
         System.out.println(message);
+    }
+    private void limparCampos() {
+        textFieldNomePrato.setText("");
+        textFieldPreco.setText("");
     }
 }

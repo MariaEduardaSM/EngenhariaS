@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import java.awt.Color;
@@ -14,8 +15,48 @@ import java.awt.Font;
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
+
+// Classe para representar os dados do estabelecimento
+class Estabelecimento {
+    private String nomeEstabelecimento;
+    private String cnpj;
+    private String endereco;
+    private String tipo;
+    private String telefone;
+    private String nomeProprietario;
+    private String cpfProprietario;
+    private String email;
+    private String senha;
+
+    // Construtor
+    public Estabelecimento(String nomeEstabelecimento, String cnpj, String endereco, String tipo, String telefone,
+            String nomeProprietario, String cpfProprietario, String email, String senha) {
+        this.nomeEstabelecimento = nomeEstabelecimento;
+        this.cnpj = cnpj;
+        this.endereco = endereco;
+        this.tipo = tipo;
+        this.telefone = telefone;
+        this.nomeProprietario = nomeProprietario;
+        this.cpfProprietario = cpfProprietario;
+        this.email = email;
+        this.senha = senha;
+    }
+
+    // Getters e setters (opcional)
+
+    @Override
+    public String toString() {
+        return "Estabelecimento [nomeEstabelecimento=" + nomeEstabelecimento + ", cnpj=" + cnpj + ", endereco="
+                + endereco + ", tipo=" + tipo + ", telefone=" + telefone + ", nomeProprietario=" + nomeProprietario
+                + ", cpfProprietario=" + cpfProprietario + ", email=" + email + ", senha=" + senha + "]";
+    }
+}
 
 public class TelaCadastroEstabelecimento extends JFrame {
+
+    private static List<Estabelecimento> listaEstabelecimentos = new ArrayList<>();
 
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
@@ -37,6 +78,13 @@ public class TelaCadastroEstabelecimento extends JFrame {
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
+                    Object estabelecimento = null;
+					listaEstabelecimentos.add((Estabelecimento) estabelecimento);
+
+                    // Redireciona para a PrimeiraTE
+                    PrimeiraTE primeiraTE = new PrimeiraTE(null);
+                    primeiraTE.setVisible(true);
+               
                 }
             }
         });
@@ -148,22 +196,51 @@ public class TelaCadastroEstabelecimento extends JFrame {
         btnCadastrar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (camposPreenchidos()) {
+                    cadastrarEstabelecimento();
                     showMessage("Estabelecimento cadastrado com sucesso!");
-                    abrirTelaCriarCardapio();
                 } else {
                     showMessage("Preencha todos os campos antes de cadastrar!");
                 }
             }
 
             private void showMessage(String message) {
-                System.out.println(message);
+                JOptionPane.showMessageDialog(null, message);
+            }
+
+            private void cadastrarEstabelecimento() {
+                // Obtém os dados preenchidos
+                String nomeEstabelecimento = textFieldNomeEstabelecimento.getText();
+                String cnpj = textFieldCnpj.getText();
+                String endereco = textFieldEndereco.getText();
+                String tipo = textFieldTipo.getText();
+                String telefone = textFieldTelefone.getText();
+                String nomeProprietario = textFieldNomeProprietario.getText();
+                String cpfProprietario = textFieldCpfProprietario.getText();
+                String email = textFieldEmail.getText();
+                String senha = new String(passwordField.getPassword());
+
+                // Cria um objeto Estabelecimento
+                Estabelecimento estabelecimento = new Estabelecimento(nomeEstabelecimento, cnpj, endereco, tipo,
+                        telefone, nomeProprietario, cpfProprietario, email, senha);
+
+                // Adiciona o objeto à lista
+                listaEstabelecimentos.add(estabelecimento);
             }
         });
         btnCadastrar.setBounds(160, 330, 117, 25);
         contentPane.add(btnCadastrar);
 
+        JButton btnVoltar = new JButton("Voltar");
+        btnVoltar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                voltarParaTelaCadastro();
+            }
+        });
+        btnVoltar.setBounds(280, 330, 117, 25);
+        contentPane.add(btnVoltar);
+
         JLabel label = new JLabel("");
-        label.setBounds(-16, -88, 814, 574);
+        label.setBounds(-13, -66, 814, 574);
         label.setIcon(new ImageIcon(TelaCadastroEstabelecimento.class.getResource("/ViewImagens/fundomenu.jpeg")));
         contentPane.add(label);
     }
@@ -176,9 +253,9 @@ public class TelaCadastroEstabelecimento extends JFrame {
                 && passwordField.getPassword().length > 0;
     }
 
-    private void abrirTelaCriarCardapio() {
-        TelaCriarCardapio telaCriarCardapio = new TelaCriarCardapio();
-        telaCriarCardapio.setVisible(true);
-        dispose(); // Fecha a tela atual
+    private void voltarParaTelaCadastro() {
+        TelaCadastro telaCadastro = new TelaCadastro();
+        telaCadastro.setVisible(true);
+        dispose();
     }
 }

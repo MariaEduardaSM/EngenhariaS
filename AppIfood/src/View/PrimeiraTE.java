@@ -21,12 +21,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
-public class PrimeiraTela extends JFrame {
+public class PrimeiraTE extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
     private JTextField textField;
     private JPasswordField passwordField;
+	private List<Estabelecimento> listaEstabelecimento;
     private static List<Usuario> listaUsuarios;
 
     public static void main(String[] args) {
@@ -42,8 +43,8 @@ public class PrimeiraTela extends JFrame {
         });
     }
 
-    public PrimeiraTela(List<Usuario> listaUsuarios2) {
-        this.listaUsuarios = listaUsuarios2;
+    public PrimeiraTE(List<Estabelecimento> listaEstabelecimento) {
+        this.listaEstabelecimento = listaEstabelecimento;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
         contentPane = new JPanel();
@@ -74,7 +75,7 @@ public class PrimeiraTela extends JFrame {
                 if (validarLogin(email, senha)) {
                     abrirTelaMenu();
                 } else {
-                    showMessage("Usuário não encontrado. Verifique seu email e senha.");
+                    showMessage("Usuário não encontrado. Verifique seu cnpj e senha.");
                 }
             }
         });
@@ -96,7 +97,7 @@ public class PrimeiraTela extends JFrame {
         lblSenha.setBounds(140, 176, 70, 45);
         contentPane.add(lblSenha);
 
-        JLabel lblEmail = new JLabel("EMAIL");
+        JLabel lblEmail = new JLabel("CNPJ");
         lblEmail.setForeground(Color.WHITE);
         lblEmail.setBounds(140, 132, 70, 15);
         contentPane.add(lblEmail);
@@ -133,11 +134,10 @@ public class PrimeiraTela extends JFrame {
         dispose();     }
 
     private void abrirTelaMenu() {
-        MenuEstabelecimento menuEstabelecimento = new MenuEstabelecimento();
-        menuEstabelecimento.setVisible(true);
+      
+        new Menu().setVisible(true);
         dispose();
     }
-
 
     private void showMessage(String message) {
        
